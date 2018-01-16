@@ -15,7 +15,7 @@
 > - Deploying your web applications to a publicly accessible server is the first step in getting users  
 > - Properly securing your application ensures your application remains stable and that your user’s data is safe  
 
-## Information for the reviewer  
+## Information for the Reviewer  
   
 **SSH Login: ssh grader@18.217.182.173 -p 2200 -i udacity_key**  
 IP Address: [18.217.182.173](http://18.217.182.173/)  
@@ -25,3 +25,38 @@ Username: grader
 The server runs [the catalog application](https://github.com/hm-y/catalog-app).  
 All necessary environment packages are added such as Flask and PostgreSql.  
 
+## Project Steps, Configurations, Changes...  
+  
+**1. Create an instance of Ubuntu Server on Amazon Lightsail**  
+
+Picture comes here  
+  
+**2. Securing the server**  
+  
+- Updating the installed packages:  
+sudo apt-get update  
+sudo apt-get upgrade  
+
+- Changing the SSH port from 22 to 2200  
+- Configuring UFW to only allow SSH (port 2200), HTTP (port 80), and NTP (port 123)  
+  
+Picture here  
+  
+**3. Creating "grader" account with sudo access and SSH key pair**  
+  
+- Creating new user:  
+adduser grader  
+usermod -aG sudo grader  
+  
+- Generating key pair for "grader", locating the file and authorizing the key  
+  
+**4. Preparing for the app**  
+  
+- Setting the local time to UTC  
+sudo dpkg-reconfigure tzdata  
+
+- Installing Apache & mos_wsgi
+sudo apt-get install apache2  
+sudo apt-get install libapache2-mod-wsgi  
+
+-  
