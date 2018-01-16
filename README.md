@@ -18,7 +18,7 @@
 ## Information for the reviewer  
   
 **SSH Login: ssh grader@18.217.182.173 -p 2200 -i udacity_key**  
-IP Address: 18.217.182.173  
+IP Address: [18.217.182.173](http://18.217.182.173/)  
 Port: 2200  
 Username: grader  
   
