@@ -55,8 +55,19 @@ usermod -aG sudo grader
 - Setting the local time to UTC  
 sudo dpkg-reconfigure tzdata  
 
-- Installing Apache & mos_wsgi
+- Installing Apache & mos_wsgi  
 sudo apt-get install apache2  
 sudo apt-get install libapache2-mod-wsgi  
 
--  
+-  Configuring Apache to handle requests using the WSGI module  
+Add "WSGIScriptAlias / /var/www/html/myapp.wsgi" into "/etc/apache2/sites-enabled/000-default.conf"  
+and then "sudo apache2ctl restart"
+
+- Installing PostgreSQL, Disabling remote acces & creating db user  
+Install:  sudo apt-get install postgresql  
+Log in to psql:  "sudo su - postgres" and "psql"
+Create user and db: "CREATE USER catalog WITH PASSWORD 'password'; CREATE DATABASE catalog OWNER catalog;"  
+
+**5. Seeting up the app**  
+
+
