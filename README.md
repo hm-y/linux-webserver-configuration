@@ -21,4 +21,7 @@
 IP Address: 18.217.182.173  
 Port: 2200  
 Username: grader  
+  
+The server runs [the catalog application](https://github.com/hm-y/catalog-app).  
+All necessary environment packages are added such as Flask and PostgreSql.  
 
