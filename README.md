@@ -51,7 +51,7 @@ usermod -aG sudo grader
 - Generating key pair for "grader", locating the file and authorizing the key  
   
 **4. Preparing for the app**  
-  
+
 - Setting the local time to UTC  
 sudo dpkg-reconfigure tzdata  
 
@@ -68,6 +68,31 @@ Install:  sudo apt-get install postgresql
 Log in to psql:  "sudo su - postgres" and "psql"
 Create user and db: "CREATE USER catalog WITH PASSWORD 'password'; CREATE DATABASE catalog OWNER catalog;"  
 
-**5. Seeting up the app**  
+**5. Setting up the app**  
 
+All details on this tutorial:  
+[How To Deploy a Flask Application on an Ubuntu ](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
+- Cloning the app into the folder "/var/www/FlaskApp"  
+Picture here  
+
+- Change the name of project.py to __init__.py  
+
+- Getting "client_secrets.json" from Google API console and locate the file in the project folder  
+
+- Converting sqlite into psql databases by editing engine codes in db_setup.py, data_sample.py and __init__.py
+
+- Configuring mod_wsgi  
+Creating & confiduring the virtual environment: sudo virtualenv venv  
+
+- Set up database  
+python db_setup.py  
+python data_sample.py  
+
+- Restart Apache  
+sudo service apache2 restart  
+
+**6. Additionals**  
+
+- Disable remote login of root  
+- Enforcing Key-based SSH authentication  
