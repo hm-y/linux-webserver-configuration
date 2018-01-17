@@ -34,64 +34,71 @@ All necessary environment packages are added such as Flask and PostgreSql.
 **2. Securing the server**  
   
 - Updating the installed packages:  
+```
 sudo apt-get update  
 sudo apt-get upgrade  
-
+```
 - Changing the SSH port from 22 to 2200  
 - Configuring UFW to only allow SSH (port 2200), HTTP (port 80), and NTP (port 123)  
   
 <img src="/img/ufw.png" width="500">  
   
-**3. Creating "grader" account with sudo access and SSH key pair**  
+**3. Creating `grader` account with sudo access and SSH key pair**  
   
 - Creating new user:  
+```
 adduser grader  
 usermod -aG sudo grader  
-  
-- Generating key pair for "grader", locating the file and authorizing the key  
+```  
+- Generating key pair for `grader`, locating the file and authorizing the key  
   
 **4. Preparing for the app**  
 
 - Setting the local time to UTC  
-sudo dpkg-reconfigure tzdata  
-
+`sudo dpkg-reconfigure tzdata`  
+  
 - Installing Apache & mos_wsgi  
+```
 sudo apt-get install apache2  
 sudo apt-get install libapache2-mod-wsgi  
-
+```
 -  Configuring Apache to handle requests using the WSGI module  
-Add "WSGIScriptAlias / /var/www/html/myapp.wsgi" into "/etc/apache2/sites-enabled/000-default.conf"  
-and then "sudo apache2ctl restart"
+Add `WSGIScriptAlias / /var/www/html/myapp.wsgi` into `/etc/apache2/sites-enabled/000-default.conf`  
+and then `sudo apache2ctl restart`
 
 - Installing PostgreSQL, Disabling remote acces & creating db user  
-Install:  sudo apt-get install postgresql  
-Log in to psql:  "sudo su - postgres" and "psql"
-Create user and db: "CREATE USER catalog WITH PASSWORD 'password'; CREATE DATABASE catalog OWNER catalog;"  
-
+Install:  `sudo apt-get install postgresql`  
+Log in to psql:  `sudo su - postgres` and `psql`
+Create user and db:  
+```
+CREATE USER catalog WITH PASSWORD 'password';  
+CREATE DATABASE catalog OWNER catalog;  
+```
 **5. Setting up the app**  
 
 All details on this tutorial:  
 [How To Deploy a Flask Application on an Ubuntu ](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
-- Cloning the app into the folder "/var/www/FlaskApp"  
+- Cloning the app into the folder `/var/www/FlaskApp`  
 
 <img src="/img/tree.png" width="500">  
 
-- Change the name of project.py to __init__.py  
+- Change the name of `project.py` to `__init__.py`  
 
-- Getting "client_secrets.json" from Google API console and locate the file in the project folder  
+- Getting `client_secrets.json` from Google API console and locate the file in the project folder  
 
-- Converting sqlite into psql databases by editing engine codes in db_setup.py, data_sample.py and __init__.py
+- Converting sqlite into psql databases by editing engine codes in `db_setup.py`, `data_sample.py` and `__init__.py`
 
 - Configuring mod_wsgi  
-Creating & confiduring the virtual environment: sudo virtualenv venv  
+Creating & confiduring the virtual environment: `sudo virtualenv venv`  
 
 - Set up database  
+```
 python db_setup.py  
 python data_sample.py  
-
+```
 - Restart Apache  
-sudo service apache2 restart  
+`sudo service apache2 restart`  
 
 **6. Additionals**  
 
