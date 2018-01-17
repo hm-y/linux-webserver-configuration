@@ -68,7 +68,7 @@ and then `sudo apache2ctl restart`
 
 - Installing PostgreSQL, Disabling remote acces & creating db user  
 Install:  `sudo apt-get install postgresql`  
-Log in to psql:  `sudo su - postgres` and `psql`
+Log in to psql:  `sudo su - postgres` and `psql`  
 Create user and db:  
 ```
 CREATE USER catalog WITH PASSWORD 'password';  
@@ -85,12 +85,12 @@ All details on this tutorial:
 
 - Change the name of `project.py` to `__init__.py`  
 
-- Getting `client_secrets.json` from Google API console and locate the file in the project folder  
+- Getting `client_secrets.json` from Google API console, locating the file in the project folder and replace `client-id` in `login.html` in the folder `templates`  
 
 - Converting sqlite into psql databases by editing engine codes in `db_setup.py`, `data_sample.py` and `__init__.py`
 
 - Configuring mod_wsgi  
-Creating & confiduring the virtual environment: `sudo virtualenv venv`  
+Creating & configuring the virtual environment: `sudo virtualenv venv`  
 
 - Set up database  
 ```
