@@ -29,7 +29,7 @@ All necessary environment packages are added such as Flask and PostgreSql.
   
 **1. Create an instance of Ubuntu Server on Amazon Lightsail**  
 
-Picture comes here  
+<img src="/img/instance.png" width="500"> 
   
 **2. Securing the server**  
   
@@ -40,7 +40,7 @@ sudo apt-get upgrade
 - Changing the SSH port from 22 to 2200  
 - Configuring UFW to only allow SSH (port 2200), HTTP (port 80), and NTP (port 123)  
   
-Picture here  
+<img src="/img/ufw.png" width="500">  
   
 **3. Creating "grader" account with sudo access and SSH key pair**  
   
@@ -74,7 +74,8 @@ All details on this tutorial:
 [How To Deploy a Flask Application on an Ubuntu ](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps)
 
 - Cloning the app into the folder "/var/www/FlaskApp"  
-Picture here  
+
+<img src="/img/tree.png" width="500">  
 
 - Change the name of project.py to __init__.py  
 
