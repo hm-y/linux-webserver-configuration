@@ -89,8 +89,8 @@ All details on this tutorial:
 
 - Converting sqlite into psql databases by editing engine codes in `db_setup.py`, `data_sample.py` and `__init__.py`
 
-- Configuring mod_wsgi  
-Creating & configuring the virtual environment: `sudo virtualenv venv`  
+- Configuring mod_wsgi and setting up the virtual environment: 
+`sudo virtualenv venv`  
 
 - Set up database  
 ```
